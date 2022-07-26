@@ -50,15 +50,22 @@
 
 .cards {
   display: flex;
-  align-content: flex-start;
-  align-items: center;
-  justify-content: space-evenly;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: flex-start;
+  min-width: 800px;
+  min-height: 800px;
+  
 }
 
 .imagenes {
   max-width: 200px;
   max-height: 200px;
 }
+
+
 
 .layoutfooter {
   display: flex;

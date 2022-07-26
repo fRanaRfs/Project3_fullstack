@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import AnunciosPage from './pages/AnunciosPage'
+import AnunciosDetails from './pages/AnunciosDetails'
 
 
 import SignupPage from './pages/SignupPage';
@@ -16,6 +17,7 @@ import LoginPage from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute'; 
 import AnonRoute from './components/AnonRoute'; 
 import AnunciosComponent from './components/AnunciosComponent';
+import setAnunciosDetails from './components/DetallesAnuncio'
 
 
 function App() {
@@ -29,6 +31,10 @@ function App() {
 				<Route exact path="/" component={HomePage} element={
 					<Layout />
 					}
+				/>
+			<Route exact path="/anuncios/details" component={AnunciosDetails} element={
+				<Layout />
+				}
 				/>
 				<Route
 					exact

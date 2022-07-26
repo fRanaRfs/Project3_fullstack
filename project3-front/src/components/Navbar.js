@@ -26,7 +26,9 @@ function Navbar() {
         <a class="nav-item nav-link" href="/signup">Registrarse</a>
         <a class="nav-item nav-link" href="/login">Entrar</a>
         </>)
-  }
+        
+  }     
+      
       </div>
     </div>
 </nav>

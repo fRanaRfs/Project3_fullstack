@@ -44,7 +44,7 @@ function ProjectCard({ title, description, _id, image, fulldescription }) {
 			<h4>Descripción detallada: {fulldescription}</h4>
 
 			</div>
-
+			
 			
             
 			

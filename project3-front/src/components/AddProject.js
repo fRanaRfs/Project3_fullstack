@@ -47,7 +47,6 @@ function AddProject(props) {
 				
 				<label>Descripción detallada:</label>
 				<input type="text" name="fulldescription" value={fulldescription} onChange={(e) => setFullDescription(e.target.value)}  />
-
 				<button type="submit">Añadir</button>
 				</div>
 			</form>

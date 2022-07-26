@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AddProject from './../components/AddProject';
 import ProjectCard from './../components/ProjectCard';
-import { getAllProjectsService, getAllAnuncios } from '../services/project.services';
+import { getAllAnuncios } from '../services/project.services';
 
 
 function ProjectListPage() {

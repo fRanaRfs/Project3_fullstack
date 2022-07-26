@@ -1,14 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const User = require('../models/User.model')
 
 const Project = require('../models/Project.model');
 
 //  POST /api/projects  -  Creates a new project
 router.post('/projects', (req, res, next) => {
 	const { title, description, image } = req.body;
+	const {_id} = req.payload
 
 	Project.create({ title, description, image, tasks: [] })
+		.then((response) => 
+		{
+			return User.findByIdAndUpdate(_id, {
+				$push: { ad: response._id }
+			});
+		})
 		.then((response) => res.json(response))
 		.catch((err) => res.json(err));
 });
@@ -19,8 +27,12 @@ router.get('/projects', (req, res, next) => {
 });
 
 router.get('/projects/anuncios', (req, res, next) => {
-	Project.find().populate('tasks').then((allProjects) => res.json(allProjects)).catch((err) => res.json(err));
+	const {_id} = req.payload
+	User.findById(_id).populate('ad').then((allProjects) => res.json(allProjects)).catch((err) => res.json(err));
+	
 });
+
+
 
 //  GET /api/projects/:projectId -  Retrieves a specific project by id
 router.get('/projects/:projectId', (req, res, next) => {

@@ -1,7 +1,7 @@
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Card } from 'antd';
 import React, { useEffect, useState } from 'react';
-import {getAllAnuncios} from '../services/project.services'
+import {getAllProjectsService} from '../services/project.services'
 const { Meta } = Card;
 
 
@@ -23,7 +23,7 @@ const { Meta } = Card;
 
         const anuncios = async() => {
             try {
-                const response = await getAllAnuncios();
+                const response = await getAllProjectsService();
                 setAnunciosArr(response.data)
                 setTitle(response.data.title)
                 setDescription(response.data.description)

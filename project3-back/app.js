@@ -28,8 +28,7 @@ app.use("/api",isAuthenticated, taskRouter);            // <== UPDATE
 const index = require('./routes/index'); // <== already included
 app.use('/', index); // <== already included
  
-const moviesRouter = require('./routes/movies.routes'); // <== has to be added
-app.use('/api', moviesRouter); // <== has to be added
+
 
 
 // app.use((req, res, next) => {

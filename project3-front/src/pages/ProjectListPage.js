@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AddProject from './../components/AddProject';
 import ProjectCard from './../components/ProjectCard';
-import { getAllProjectsService } from '../services/project.services';
+import { getAllProjectsService, getAllAnuncios } from '../services/project.services';
 
 
 function ProjectListPage() {
@@ -13,8 +13,9 @@ function ProjectListPage() {
 	const getAllProjects = async () => {
 		// Send the token through the request "Authorization" Headers
 		try {
-			const response = await getAllProjectsService();
-			setProjects(response.data);
+			const response = await getAllAnuncios();
+			console.log(response.data)
+			setProjects(response.data.ad);
 			setLoading(false);
 		} catch (err) {
 			console.log(err);

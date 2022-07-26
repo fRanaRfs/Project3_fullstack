@@ -8,6 +8,8 @@ import {useState} from 'react'
 function ProjectCard({ title, description, _id, image }) {
 	const [ isDeleted, setIsDeleted ] = useState(false);
 	const idProject= _id;
+	
+	
 
 	const handleDeleteProject = async (e) => {
 		try {
@@ -34,7 +36,7 @@ function ProjectCard({ title, description, _id, image }) {
 			<p style={{ maxWidth: '400px' }}>{description} </p>
 
 			<div>
-				<img src={image} alt="img" />
+				<img src={image} alt="img" className="imagenes" />
 			</div>
 
 			

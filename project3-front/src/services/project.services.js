@@ -21,8 +21,12 @@ const updateProjectService = (id) => {
 	return service.put(`${URL}/${id}`)
 };
 
+const getAllAnuncios = () => {
+	return service.get(`${URL}/anuncios`)
+}
 
 
 
 
-export { getAllProjectsService, addNewProjectService, getProjectDetailsService, deleteProjectService, updateProjectService };
+
+export { getAllProjectsService, addNewProjectService, getProjectDetailsService, deleteProjectService, updateProjectService, getAllAnuncios };

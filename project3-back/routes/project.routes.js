@@ -6,15 +6,19 @@ const Project = require('../models/Project.model');
 
 //  POST /api/projects  -  Creates a new project
 router.post('/projects', (req, res, next) => {
-	const { title, description } = req.body;
+	const { title, description, image } = req.body;
 
-	Project.create({ title, description, tasks: [] })
+	Project.create({ title, description, image, tasks: [] })
 		.then((response) => res.json(response))
 		.catch((err) => res.json(err));
 });
 
 //  GET /api/projects -  Retrieves all of the projects
 router.get('/projects', (req, res, next) => {
+	Project.find().populate('tasks').then((allProjects) => res.json(allProjects)).catch((err) => res.json(err));
+});
+
+router.get('/projects/anuncios', (req, res, next) => {
 	Project.find().populate('tasks').then((allProjects) => res.json(allProjects)).catch((err) => res.json(err));
 });
 

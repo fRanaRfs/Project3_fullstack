@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { addNewProjectService } from '../services/project.services.js';
-//import { image } from './ProjectCard'
+
 
 function AddProject(props) {
 	const [ title, setTitle ] = useState('');
@@ -41,7 +41,7 @@ function AddProject(props) {
 				/>
 				<div style={{border: '3px solid red', alignItems: 'center'}}>
 				<label>Imagen:</label>
-				<input type="url" name="title" onChange={(e) => setImage(e.target.value)} />
+				<input type="url" name="image" onChange={(e) => setImage(e.target.value)}  />
 				{console.log(image)}
 
 				<button type="submit">Añadir</button>

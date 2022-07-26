@@ -41,7 +41,7 @@ function AddProject(props) {
 					value={description}
 					onChange={(e) => setDescription(e.target.value)}
 				/>
-				<div style={{border: '3px solid red', alignItems: 'center'}}>
+				<div style={{alignItems: 'center'}}>
 				<label>Imagen:</label>
 				<input type="url" name="image" onChange={(e) => setImage(e.target.value)}  />
 				

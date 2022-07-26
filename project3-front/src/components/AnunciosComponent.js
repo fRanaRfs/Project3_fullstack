@@ -61,7 +61,7 @@ const { Meta } = Card;
             
           >
             <Meta
-              avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+              avatar={<Avatar src="https://emoji-uc.akamaized.net/orig/da/e992707498dcaecf8e11547df13c6b.png"/>}
               title={anuncios.title}
               description={anuncios.description}
             />

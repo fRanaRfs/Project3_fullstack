@@ -59,3 +59,8 @@
   max-width: 200px;
   max-height: 200px;
 }
+
+.layoutfooter {
+  display: flex;
+  justify-content: center;
+}

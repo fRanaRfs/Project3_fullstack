@@ -6,11 +6,12 @@ function AddProject(props) {
 	const [ title, setTitle ] = useState('');
 	const [ description, setDescription ] = useState('');
 	const [ image, setImage ] = useState();
+	const [fulldescription, setFullDescription] = useState('');
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const newProject = { title, description, image };
+		const newProject = { title, description, image, fulldescription };
 
 		// Send the token through the request "Authorization" Headers
 		try {
@@ -18,6 +19,7 @@ function AddProject(props) {
 			setTitle('');
 			setDescription('');
 			setImage('');
+			setFullDescription('');
 			props.refreshProjects();
 		} catch (err) {
 			console.log(err);
@@ -42,7 +44,9 @@ function AddProject(props) {
 				<div style={{border: '3px solid red', alignItems: 'center'}}>
 				<label>Imagen:</label>
 				<input type="url" name="image" onChange={(e) => setImage(e.target.value)}  />
-				{console.log(image)}
+				
+				<label>Descripción detallada:</label>
+				<input type="text" name="fulldescription" value={fulldescription} onChange={(e) => setFullDescription(e.target.value)}  />
 
 				<button type="submit">Añadir</button>
 				</div>
